@@ -51,5 +51,10 @@ VALUES
 INSERT INTO city
 (id, countryId, name)
 VALUES
-(1, 1, 'BsAs');
+(1, 1, 'CABA'),
+(2, 1, 'La Plata'),
+(3, 1, 'Gran Buenos Aires'),
+(4, 1, 'Corrientes'),
+(5, 1, 'Entre Rios'),
+(6, 1, 'Misiones');
 

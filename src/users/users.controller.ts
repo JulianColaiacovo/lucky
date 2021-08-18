@@ -1,10 +1,12 @@
 import {
   BadRequestException,
   Body,
+  CacheInterceptor,
   Controller,
   Get,
   Headers,
   Post,
+  UseInterceptors,
 } from '@nestjs/common';
 import { CreateUser } from './api/create.user';
 import { User } from './api/user';
@@ -19,6 +21,7 @@ export class UsersController {
   ) {}
 
   @Get()
+  @UseInterceptors(CacheInterceptor)
   async getUser(@Headers('Authorization') token: string): Promise<User> {
     const payload = await this.authenticationService.getJwtPayload(token);
     if (payload?.username) {

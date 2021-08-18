@@ -15,7 +15,7 @@ services:
   cache:
     image: "redis:alpine"
     ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
+      - ${REDIS_PORT}:6379
     env_file: ./.env
 
 volumes:
